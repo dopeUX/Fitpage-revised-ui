@@ -1,0 +1,45 @@
+.variable-page {
+  width: 100%;
+}
+.variable-page .content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.variable-page .content .dashboard {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: black;
+  padding: 1rem;
+  padding-right: 5rem;
+  color: #ffffff;
+}
+.variable-page .content .dashboard ul {
+  margin: 0;
+  padding: 0;
+}
+.variable-page .content .dashboard ul li {
+  width: 200px;
+  margin-right: 5rem;
+}
+.variable-page .content .dashboard ul li .divider {
+  width: 100%;
+  height: 1px;
+  background-color: aliceblue;
+}
+.variable-page .content .dashboard .indicator .params {
+  display: flex;
+  background: #ffffff;
+}
+.variable-page .content .dashboard .indicator .params p {
+  color: #000000;
+  margin-right: 3rem;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+.variable-page .content .dashboard .indicator .params input {
+  margin-left: 2rem;
+  margin-right: 0;
+  outline: none;
+  border: none;
+}/*# sourceMappingURL=variablePage.css.map */

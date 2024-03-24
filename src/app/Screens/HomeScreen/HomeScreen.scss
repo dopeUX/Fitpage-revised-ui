@@ -1,0 +1,49 @@
+.home-screen {
+	width: 100%;
+	background: transparent;
+	display: flex;
+
+	.content {
+	  width: 100%;	
+	  display: flex;
+	  justify-content: center;
+	 
+	  .dashboard {
+		width: fit-content;
+		height: fit-content;
+		background-color: black;
+		color: #ffffff;
+		padding: 2rem;
+		padding-right: 3rem;
+
+		.data-list {
+			text-decoration: none;
+			list-style-type: none;
+			color: #ffffff;
+			text-align: left;
+       
+			li{
+				color: #ffffff;
+				display:block;
+				text-align: left;
+				margin-top: 2rem;
+				margin-right: 6rem;
+                cursor: pointer;
+				h3 {
+					font-size: 1rem;
+				}
+				p{
+                    font-size: .8rem;
+				}
+
+				.divider {
+					width: 100%;
+					height: 1px;
+					border-radius: 20px;
+					background: #ffffff;
+				}
+			}
+		}
+	  }
+	}
+}

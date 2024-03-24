@@ -1,0 +1,54 @@
+.variable-page {
+  width: 100%;
+
+  .content {
+	display: flex;
+	width: 100%;
+    justify-content: center;
+	.dashboard {
+		width: fit-content;
+		background-color: black;
+        padding: 1rem;
+		padding-right: 5rem;
+		color: #ffffff;
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				width: 200px;
+				margin-right: 5rem;
+                
+				.divider {
+					width: 100%;
+					height: 1px;
+					background-color: aliceblue;
+				}
+
+			}
+		}
+
+		.indicator {
+
+			.params {
+				display: flex;
+				background: #ffffff;
+                
+				p{
+					color: #000000;
+					margin-right: 3rem;
+					font-size: .8rem;
+					margin-left: 1rem;
+				}
+				input {
+					margin-left: 2rem;
+					margin-right: 0;
+					outline: none;
+					border: none;
+				}
+			}
+		}
+
+	}
+  }
+}
