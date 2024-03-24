@@ -29,7 +29,7 @@ const DetailPage: any = ({params}: {params: {dataId: string}}) => {
 			  if(criteria.variable[item].type == 'value') {
 				modified = modified.replace(item, `<a href="https://fitpage-revised.vercel.app/${params.dataId}/${index}/${item}" style='color: blue; margin:0; cursor:pointer'>(&#8209;${criteria.variable[item]['values'][0]})</a>`)
 			  } else if(criteria.variable[item].type == 'indicator') {
-				modified = modified.replace(item, `<a href="https://fitpage-revised.vercel.app${params.dataId}/${index}/${item}" style='color: blue; margin:0; cursor:pointer'>(&#8209;${criteria.variable[item]['default_value']})</a>`)
+				modified = modified.replace(item, `<a href="https://fitpage-revised.vercel.app/${params.dataId}/${index}/${item}" style='color: blue; margin:0; cursor:pointer'>(&#8209;${criteria.variable[item]['default_value']})</a>`)
 			  }
 			})
 			component = (<p style={{display:'flex'}} dangerouslySetInnerHTML={{__html:modified}}></p>)
