@@ -1,21 +1,29 @@
+'use client';
 import getDataById from "@/app/Services/getDataById.service";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './variablePage.css';
 import he from 'he';
 
-export interface VariablePageProps {
-  
-}
+export interface VariablePageProps {}
 
-const VariablePage = async ({params}: any) => {
-	let response: any = await getDataById(params.dataId);
-	let data = response.data.data[0];
-	let preparedData = data.criteria[params.criteria]['variable'][decodeURIComponent(params.variable)];
-	// const data = response.data.data[0];
+const VariablePage = ({params}: any) => {
+	
+    const [preparedData, setPreparedData] = useState<any>()!;
+	
+	useEffect(() => {
+      getData();
+	})
+
+	async function getData() {
+		let response: any = await getDataById(params.dataId);
+		let data = response.data.data[0];
+		setPreparedData(data.criteria[params.criteria]['variable'][decodeURIComponent(params.variable)])
+	}
+
 	return (
 	   <div className="variable-page">
 		 <div className="content">
-			<div className="dashboard">
+			{preparedData ? <div className="dashboard">
                 {preparedData.type == 'value' ? <ul className="data-list">
 					{
 					  preparedData.values.map((item: any, index: number) => {
@@ -35,10 +43,12 @@ const VariablePage = async ({params}: any) => {
 
 					  <div className="params">
 						<p>{preparedData.parameter_name}</p>
-						<input type="text" value={preparedData.default_value} onChange={() => {}}/>
+						<input type="text" value={preparedData.default_value}/>
 					  </div>
 					</div>}
-			</div>
+			</div> : <div>
+				<h3>Loading data...</h3>
+				</div>}
 		 </div>
 	   </div>
 	)

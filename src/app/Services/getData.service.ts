@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getData = async () => {
-   const url = `https://ff210980-520c-4132-a46d-c78ce811bd21-00-1jctr4iiqmoaz.pike.replit.dev/api/data`;
+   const url = `https://fitpage-revised-server.vercel.app/api/data`;
    let axiosConfig: any = {};
    let response;
    console.log('api-initiated')

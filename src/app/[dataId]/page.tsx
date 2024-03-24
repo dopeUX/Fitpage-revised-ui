@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import './detailPage.css';
 import React, { useEffect, useState } from "react";
 import getDataById from "../Services/getDataById.service";
@@ -56,7 +56,7 @@ const DetailPage: any = ({params}: {params: {dataId: string}}) => {
 	return (
 	  <div className="data-page">
 		<div className="content">
-		  {data && <div className="dashboard">
+		  {data ? <div className="dashboard">
             <div className="header">
 			  <h3>{data.name}</h3>
 			  <p style={{color: data.color}}>{data.tag}</p>
@@ -77,7 +77,9 @@ const DetailPage: any = ({params}: {params: {dataId: string}}) => {
 				  }
 			   </ul>
 			</div>
-		  </div>}
+		  </div> : <div>
+			<h3>Loading...</h3>
+			</div>}
 		</div>
 	  </div>
 	)

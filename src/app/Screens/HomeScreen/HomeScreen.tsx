@@ -1,18 +1,27 @@
-import React from "react";
+'use client';
+import React, { useEffect, useState } from "react";
 import './HomeScreen.css';
 import getData from "@/app/Services/getData.service";
 import ListItem from "@/app/Components/ListItem/ListItem";
 
 export interface HomeScreenProps {}
 
-const HomeScreen: React.FC<any> = async({}) => {
+const HomeScreen: React.FC<any> = ({}) => {
+	const [res, setRes] = useState<any>()!;
+    useEffect(() => {
+		getDetailed();
+	})
 
-	const res: any = await getData();
+	async function getDetailed() {
+		const response: any = await getData(); 
+		setRes(response)
+	}
+
 
 	return (
 	  <div className="home-screen">
 		<section className="content">
-		 <div className="dashboard">
+		{res ? <div className="dashboard">
            <ul className="data-list">
             {
 			   res.data.map((item: any, index: number) =>{
@@ -22,19 +31,12 @@ const HomeScreen: React.FC<any> = async({}) => {
 			  })
 			}
 		   </ul>
-		 </div>
+		 </div> : <div>
+			<h3>Loading...</h3>
+			</div>}
 		</section>
 	  </div>
 	)
-}
-
-export const getServerSideProps = async () => {
-  const data: any = await getData();
-  return {
-	props:{
-		data
-	}
-  }
 }
 
 export default HomeScreen;
